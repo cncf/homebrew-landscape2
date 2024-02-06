@@ -1,26 +1,40 @@
 class Landscape2 < Formula
   desc "Landscape2 CLI tool"
-  version "0.5.0"
+  version "0.6.0"
   on_macos do
     on_arm do
-      url "https://github.com/cncf/landscape2/releases/download/v0.5.0/landscape2-aarch64-apple-darwin.tar.xz"
-      sha256 "c6bbd732e0ffed55844117d5cbf31cfe0b4270043c57b10928a1b6834968fcf0"
+      url "https://github.com/cncf/landscape2/releases/download/v0.6.0/landscape2-aarch64-apple-darwin.tar.xz"
+      sha256 "eb563313dfa89d82704a3f0c195402b19da310848c436a4ce033fbfdec1837da"
     end
     on_intel do
-      url "https://github.com/cncf/landscape2/releases/download/v0.5.0/landscape2-x86_64-apple-darwin.tar.xz"
-      sha256 "749d3e028bbc84ffd966739c29ee77acbf0d88566b670880178921ccaab2a2be"
+      url "https://github.com/cncf/landscape2/releases/download/v0.6.0/landscape2-x86_64-apple-darwin.tar.xz"
+      sha256 "c825bfdf98853fc5681a079da7e97a205def08581a4a8351c688ba915cc39c85"
     end
   end
   on_linux do
     on_intel do
-      url "https://github.com/cncf/landscape2/releases/download/v0.5.0/landscape2-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "a16f1e77c879f4b9a03da89bd9863ad49196daa67d775846e57031ed6436323c"
+      url "https://github.com/cncf/landscape2/releases/download/v0.6.0/landscape2-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "5f4cae9d8ca9d507c02b0bbb871131ec54d3efc424115693197d98aeeb99217d"
     end
   end
   license "Apache-2.0"
 
   def install
-    bin.install "landscape2"
+    on_macos do
+      on_arm do
+        bin.install "landscape2"
+      end
+    end
+    on_macos do
+      on_intel do
+        bin.install "landscape2"
+      end
+    end
+    on_linux do
+      on_intel do
+        bin.install "landscape2"
+      end
+    end
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
