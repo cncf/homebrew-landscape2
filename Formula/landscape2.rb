@@ -1,20 +1,20 @@
 class Landscape2 < Formula
   desc "Landscape2 CLI tool"
   homepage "https://github.com/cncf/landscape2"
-  version "0.13.0"
+  version "1.0.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/cncf/landscape2/releases/download/v0.13.0/landscape2-aarch64-apple-darwin.tar.xz"
-      sha256 "df3821ce0b319103d5ec63b3f8d12e7030aa520a1ee8d4d1b99fbdac71a4282a"
+      url "https://github.com/cncf/landscape2/releases/download/v1.0.0/landscape2-aarch64-apple-darwin.tar.xz"
+      sha256 "9a54422e5de8905292043174e9adc5f91d3d0f54484625ebf4b1b5de005b239b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/cncf/landscape2/releases/download/v0.13.0/landscape2-x86_64-apple-darwin.tar.xz"
-      sha256 "410445da09d6500aa48777d3ddba1de1ff48dcf8094c2f1904aa0f35693ec736"
+      url "https://github.com/cncf/landscape2/releases/download/v1.0.0/landscape2-x86_64-apple-darwin.tar.xz"
+      sha256 "dcd4d6e34a223b37f2393e17852fc677bfea0fcff9ab33dc8b3300ab8c3a1a9c"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/cncf/landscape2/releases/download/v0.13.0/landscape2-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "ff02fd24a1644b96a361bf2e90ecf8264fc2a5af90483686284ea3a9d73bc00a"
+    url "https://github.com/cncf/landscape2/releases/download/v1.0.0/landscape2-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "a909695a56cbb550ab233248a59fae184cf5d77deb553684affdd48fdf1e7040"
   end
   license "Apache-2.0"
 
